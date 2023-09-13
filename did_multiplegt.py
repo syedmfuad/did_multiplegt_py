@@ -4,6 +4,7 @@
 # In[ ]:
 
 
+
 import pandas as pd
 import numpy as np
 from itertools import combinations
@@ -260,7 +261,12 @@ def run_did(df, controls, placebo, dynamic, trends, trends_nonparam):
     result = IV2SLS(y, X, None, None, W).fit(cov_type="kernel", kernel="bartlett")
     return result
 
-# Example usage:
 result = run_did(df, controls=["X1", "X2"], placebo=1, dynamic=1, trends=["T1", "T2"], trends_nonparam=["T3", "T4"])
 print(result.summary())
+
+
+
+
+
+
 
